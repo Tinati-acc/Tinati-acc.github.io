@@ -3,72 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دفتر روزنامه و دفتر کل</title>
-    <link rel="stylesheet" href="/style.css">
+    <title>دفتر روزنامه</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>دفتر روزنامه و دفتر کل</h1>
-        <form id="entryForm">
-            <label for="date">تاریخ:</label>
-            <input type="date" id="date" required>
-            
-            <label for="description">شرح:</label>
-            <input type="text" id="description" required>
-            
-            <label for="accountName">نام حساب:</label>
-            <input type="text" id="accountName" required list="accountNames">
-            
-            <label for="amount">مبلغ:</label>
-            <input type="number" id="amount" required>
-            
-            <button type="button" onclick="addEntry()">اضافه کردن</button>
-        </form>
-        
-        <datalist id="accountNames">
-            <option value="نقد"></option>
-            <option value="بانک"></option>
-        </datalist>
-        
-        <h2>دفتر روزنامه</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>تاریخ</th>
-                    <th>شرح</th>
-                    <th>بدهکار</th>
-                    <th>بستانکار</th>
-                    <th>مبلغ بدهکار</th>
-                    <th>مبلغ بستانکار</th>
-                </tr>
-            </thead>
-            <tbody id="journalBody"></tbody>
-        </table>
-        
-        <div class="totals">
-            <p>جمع بدهکار: <span id="totalDebit">0</span></p>
-            <p>جمع بستانکار: <span id="totalCredit">0</span></p>
-        </div>
-        
-        <h2>دفتر کل</h2>
-        <div id="ledger"></div>
-        
-        <h2>صورت سود و زیان</h2>
-        <div id="incomeStatement"></div>
-        
-        <h2>نمودار خطی</h2>
-        <canvas id="lineChart"></canvas>
-    </div>
-    <footer>
-    <div class="footer-content">
-        <p>طراحی شده توسط: محمد طینتی</p>
-        <p>تمامی حقوق محفوظ است © 2024</p>
-    </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="/script.js"></script>
+    <h1>دفتر روزنامه</h1>
+    <form onsubmit="addEntry(); return false;">
+        <label for="date">تاریخ:</label>
+        <input type="date" id="date" required>
+        <label for="description">شرح:</label>
+        <input type="text" id="description" required>
+        <label for="accountName">نام حساب:</label>
+        <select id="accountName" required>
+            <option value="" disabled selected>انتخاب کنید</option>
+            <option value="نقد">نقد</option>
+            <option value="بانک">بانک</option>
+        </select>
+        <label for="amount">مبلغ:</label>
+        <input type="number" id="amount" step="0.01" required>
+        <button type="submit">اضافه کردن</button>
+    </form>
+
+    <h2>دفتر روزنامه</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>تاریخ</th>
+                <th>شرح</th>
+                <th>بدهکار</th>
+                <th>بستانکار</th>
+                <th>مبلغ بدهکار</th>
+                <th>مبلغ بستانکار</th>
+            </tr>
+        </thead>
+        <tbody id="journalBody"></tbody>
+    </table>
+
+    <h2>دفتر کل</h2>
+    <div id="ledger"></div>
+
+    <h2>صورت سود و زیان</h2>
+    <div id="incomeStatement"></div>
+
+    <h2>نمودار خطی</h2>
+    <canvas id="lineChart" width="400" height="200"></canvas>
+
+    <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
