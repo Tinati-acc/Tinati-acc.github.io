@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="پروژه حسابداری">
+    <meta name="author" content="Mohammad Tinati">
+    <title>دفتر روزنامه</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>دفتر روزنامه</h1>
+        <div id="formContainer">
+            <label for="date">تاریخ:</label>
+            <input type="text" id="date" placeholder="مثال: 1403/03/10"><br>
+
+            <label for="description">شرح:</label>
+            <input type="text" id="description" placeholder="شرح تراکنش"><br>
+
+            <label for="accountName">نام حساب:</label>
+            <input type="text" id="accountName" placeholder="نام حساب"><br>
+
+            <label for="amount">مبلغ:</label>
+            <input type="number" id="amount" placeholder="مبلغ تراکنش"><br>
+
+            <button onclick="addEntry()">افزودن به دفتر روزنامه</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>تاریخ</th>
+                    <th>شرح</th>
+                    <th>حساب بدهکار</th>
+                    <th>حساب بستانکار</th>
+                    <th>مبلغ بدهکار</th>
+                    <th>مبلغ بستانکار</th>
+                </tr>
+            </thead>
+            <tbody id="journalBody">
+                <!-- ردیف‌های دفتر روزنامه در اینجا قرار می‌گیرند -->
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4">جمع کل:</td>
+                    <td id="totalDebit">0</td>
+                    <td id="totalCredit">0</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+<!--
+     ادرس صفحه گیت هاب : https://github.com/M-Tinati
+
+     github adress : https://github.com/M-Tinati 
+
+     پروژه ماتریس ها در جاوااسکریپت
+     محمد طینتی
+     mohammad tinati
+-->
