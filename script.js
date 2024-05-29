@@ -166,7 +166,7 @@ function addEntry() {
 function determineAccountType(accountName) {
     // در اینجا یک لیست از حساب‌های بدهکار و بستانکار تعریف می‌شود
     const debitAccounts = ["نقد", "بانک"];
-    const creditAccounts = ["اسناد پرداختنی","فروش"];
+    const creditAccounts = ["نقد", "بانک"];
 
     if (debitAccounts.includes(accountName)) {
         return "بدهکار";
